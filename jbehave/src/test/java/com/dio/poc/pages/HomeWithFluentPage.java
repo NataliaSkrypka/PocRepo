@@ -44,7 +44,7 @@ public class HomeWithFluentPage extends FluentPage {
 		List<String> cityList = new ArrayList<String>();
 		int numOfCities = 5;
 		for (int i = 1; i < numOfCities ; i++){
-			cityList.add(find("#cityWrapper div [class=disname ]>a", i).getText());
+			cityList.add(find("#cityWrapper div .disname .destination_name", i).getText());
 		}
 		return cityList;
 	}

@@ -3,7 +3,6 @@ package com.dio.poc.stories;
 import java.util.List;
 
 import org.fluentlenium.adapter.FluentTest;
-import org.fluentlenium.core.annotation.Page;
 import org.jbehave.core.annotations.AfterScenario;
 import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.Given;
@@ -22,19 +21,19 @@ public class SearchOnBookingWithFluentSteps extends FluentTest {
 
 	private static Logger LOG = LoggerFactory.getLogger(SearchOnBookingWithFluentSteps.class);
 
-    @Page
 	HomeWithFluentPage homePage;
     WebDriver driver;
 
     @BeforeScenario
     public void beforeScenario(){
-        driver = new FirefoxDriver();
-        homePage = createPage(HomeWithFluentPage.class);
+    	driver = new FirefoxDriver();
     }
 
     @Given("f user open main page")
     public void userOpenBookingComMainPage() {
-    	homePage.go();
+//        driver.get("http://www.booking.com/");
+        homePage = new HomeWithFluentPage(driver);
+        goTo(homePage);
     }
 
     @When("f user performs search for <fullText> on main page")
