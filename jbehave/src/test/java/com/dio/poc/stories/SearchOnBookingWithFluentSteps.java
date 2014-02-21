@@ -23,9 +23,9 @@ public class SearchOnBookingWithFluentSteps extends FluentTest {
 
 	HomeWithFluentPage homePage;
     WebDriver driver;
-
+    
     @BeforeScenario
-    public void beforeScenario(){
+    public void beforeMethod(){
     	driver = new FirefoxDriver();
     }
 
@@ -78,9 +78,12 @@ public class SearchOnBookingWithFluentSteps extends FluentTest {
     public void checkMessageOnDates(@Named("message") final String messageOnDates){
         Assert.assertEquals("Message is not as expected", messageOnDates, homePage.getErrorOnDates());
     }
-
+    
     @AfterScenario
-    public void afterStories(){
-        driver.quit();
+    public void afterMethod(){
+    	if (driver != null){
+    		driver.quit();
+    	}
     }
+
 }

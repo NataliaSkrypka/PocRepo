@@ -25,7 +25,8 @@ import org.junit.runner.RunWith;
         ignoreFailureInView = false,
         stepsFactory = false,
         threads = 1)
-@UsingPaths(searchIn = "src/test/resources/", includes = "jbehave/FluentLeniumTest.story")
+@UsingPaths(searchIn = "src/test/resources/", includes = "jbehave/*.story")
 @UsingSteps(instances = {SearchOnBookingSteps.class, SearchOnBookingWithFluentSteps.class})
 public class PocJbehaveStories {
+
 }

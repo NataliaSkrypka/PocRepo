@@ -13,33 +13,39 @@ public class FirstFeatureSteps {
 
     private static final Logger LOG = LoggerFactory.getLogger(FirstFeatureSteps.class);
 
-    @Given("^aaa$")
-    public void aaa() {
-        LOG.error("aaa");
+    @Given("^user open main page$")
+    public void userOpenMainPage() {
+        LOG.error("user open main page");
     }
 
-    @When("^bbb$")
-    public void bbb() {
-        LOG.error("bbb");
+    @When("^user performs search for (.+) on main page$")
+    public void userPerformsSearch(String searchText) {
+        LOG.error("user performs search for on main page");
+    }
+    
+    @When("^user leave search fields empty$")
+    public void userLeaveSearchFieldEmpty(){
+    	LOG.info("user leave search fields empty");
+    }
+    
+    @When("^user performs search for (.+) on main page and leave dates not specified$")
+    public void userSearchWithoutSpecifiedDates(String searchText){
+    	LOG.info("user performs search for on main page and leave dates not specified");
     }
 
-    @Then("^ccc$")
-    public void ccc() {
-        LOG.error("ccc");
+    @Then("^mentioned entity is shown in the result$")
+    public void resultIsShown() {
+        LOG.error("mentioned entity is shown in the result");
     }
 
-    @Then("^eee$")
-    public void eee() {
-        LOG.error("eee");
+    @Then("^message (.+) is shown on search result$")
+    public void messageIsShownOnResult(String expectedMessage) {
+        LOG.error("message is shown on search result");
     }
 
-    @Then("^ddd$")
-    public void ddd() {
-        LOG.error("ddd");
+    @Then("^error message (.+) about invalid dates is shown on search result$")
+    public void errorMessageOnDatesIsShown(String expectedMessage) {
+        LOG.error("error message about invalid dates is shown on search result");
     }
 
-    @Given("^aaa (.*)$")
-    public void aaa_aa_t(String mm){
-        LOG.error("aaa " + mm);
-    }
 }
