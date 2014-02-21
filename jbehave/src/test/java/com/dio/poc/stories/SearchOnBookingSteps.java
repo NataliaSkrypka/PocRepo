@@ -41,9 +41,7 @@ public class SearchOnBookingSteps extends Steps {
 
     @When("user leave search fields empty")
     public void leaveSearchFieldsEmpty() {
-        homePage.inputTextInSearchField("");
-        homePage.clickOnNoSpecificDatesCheckBox();
-        homePage.clickOnSearchButton();
+    	searchTextOnBookingCom("");
     }
 
     @When("user performs search for <fullText> on main page and leave dates not specified")

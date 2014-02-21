@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.fluentlenium.core.FluentPage;
-import org.openqa.selenium.WebDriver;
+import org.fluentlenium.core.filter.FilterConstructor;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 public class HomeWithFluentPage extends FluentPage {
 	
@@ -34,6 +35,7 @@ public class HomeWithFluentPage extends FluentPage {
 
 	public void clickOnNoSpecificDatesCheckBox() {
 		click("#availcheck");
+		find("select[name=sb_predefined_group_options_value]").find("option", FilterConstructor.withText("1 Adult")).click();
 	}
 
 	public void clickOnSearchButton() {

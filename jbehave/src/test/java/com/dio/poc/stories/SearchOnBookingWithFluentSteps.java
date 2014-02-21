@@ -31,7 +31,6 @@ public class SearchOnBookingWithFluentSteps extends FluentTest {
 
     @Given("f user open main page")
     public void userOpenBookingComMainPage() {
-//        driver.get("http://www.booking.com/");
         homePage = new HomeWithFluentPage(driver);
         goTo(homePage);
     }

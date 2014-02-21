@@ -1,9 +1,13 @@
 Feature: Full text search on booking.com
 
-  Scenario : Full text search with valid parameters
+  Scenario Outline: Full text search with valid parameters
     Given user open main page
-    When user performs search for Lon on main page
+    When user performs search for <fullText> on main page
     Then mentioned entity is shown in the result
+  Examples:
+	|fullText            |
+	|Lon                 |
+	|Ellington           |
     
  Scenario Outline: Full text search with invalid parameters
     Given user open main page
