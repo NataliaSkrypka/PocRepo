@@ -12,8 +12,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = {
-        "pretty",
-        "html:target/cucumber-html-report"
+        "json",
+        "json:target/cucumber-report.json"
 },features = {"src/test/resources/features"})
 public class PocCucumberStories {
 
