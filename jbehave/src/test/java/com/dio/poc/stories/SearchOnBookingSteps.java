@@ -3,11 +3,9 @@ package com.dio.poc.stories;
 import com.dio.poc.pages.HomePage;
 import org.jbehave.core.annotations.*;
 import org.jbehave.core.steps.Steps;
-import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,10 +20,10 @@ public class SearchOnBookingSteps extends Steps {
 
     HomePage homePage;
     WebDriver driver;
-
+    
     @BeforeScenario
     public void beforeScenario(){
-        driver = new FirefoxDriver();
+    	driver = new FirefoxDriver();
     }
 
     @Given("user open main page")
@@ -43,9 +41,7 @@ public class SearchOnBookingSteps extends Steps {
 
     @When("user leave search fields empty")
     public void leaveSearchFieldsEmpty() {
-        homePage.inputTextInSearchField("");
-        homePage.clickOnNoSpecificDatesCheckBox();
-        homePage.clickOnSearchButton();
+    	searchTextOnBookingCom("");
     }
 
     @When("user performs search for <fullText> on main page and leave dates not specified")
@@ -76,10 +72,12 @@ public class SearchOnBookingSteps extends Steps {
     public void checkMessageOnDates(@Named("message") final String messageOnDates){
         Assert.assertEquals("Message is not as expected", messageOnDates, homePage.getErrorOnDates());
     }
-
+    
     @AfterScenario
-    public void afterStories(){
-        driver.quit();
+    public void afterScenario(){
+    	if(driver != null){
+    		driver.quit();
+    	}
     }
 
 }
