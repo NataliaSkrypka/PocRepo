@@ -97,7 +97,7 @@
                             <projectName>cucumber-jvm-example</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber-report.json</cucumberOutput>
-                            <enableFlashCharts>false</enableFlashCharts>
+                            <enableFlashCharts>true</enableFlashCharts>
                         </configuration>
                     </execution>
                 </executions>
