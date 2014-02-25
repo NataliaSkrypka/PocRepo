@@ -2,5 +2,7 @@
 .settings/
 .idea/
 *.iml
-jbehave/target/
-cucumber/target/
+*/target/
+*/*.iml
+*/.project
+*/.classpath
