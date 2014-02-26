@@ -1,6 +1,8 @@
 package com.dio.poc.bdd;
 
+import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -11,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by vanish on 2/19/14.
  */
 @RunWith(Cucumber.class)
-@Cucumber.Options(format = {
+@CucumberOptions(format = {
         "json",
         "json:target/cucumber-report.json"
 },features = {"src/test/resources/features"})
