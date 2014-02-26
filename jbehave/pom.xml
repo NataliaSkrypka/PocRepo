@@ -83,6 +83,7 @@
 						<include>**/Test*.java</include>
 						<include>**/When*.java</include>
 						<include>**/*TestSuite.java</include>
+						<include>**/*Stories.java</include>
 					</includes>
 					<systemPropertyVariables>
 						<webdriver.driver>firefox</webdriver.driver>
